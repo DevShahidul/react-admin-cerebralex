@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {Row, Col, Tabs, Tab, Form, Button } from 'react-bootstrap';
 import { Scrollbars } from "react-custom-scrollbars";
-import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 
 const Datepicker = () => {
