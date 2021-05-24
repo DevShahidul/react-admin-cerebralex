@@ -125,7 +125,7 @@ h3 {
   overflow: hidden;
   visibility: hidden;
   @include transition(all 0.3s ease-in);
-  z-index: 9;
+  z-index: 99;
   &::before {
     content: "";
     width: 8px;

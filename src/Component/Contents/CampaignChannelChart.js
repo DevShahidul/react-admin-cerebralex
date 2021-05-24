@@ -46,25 +46,27 @@ const CampaignChannelChart = () => {
                   <span className="active"></span>
                   <Button  variant="transparent" onClick={() => setActivities(!activities)}><i className="fa fa-chevron-down" aria-hidden="true"></i></Button>
                 </div>
-                <div className="dropdown-box activities-dropdown">
+                {activities ? 
+                  <div className="dropdown-box activities-dropdown">
                     <Form.Group className="radio">
                       <Col sm={12}>
-                          <Form.Check
+                        <Form.Check
                           type="radio"
                           label="Active"
                           name="status"
                           id="active13"
-                          />
-                          <Form.Check
+                        />
+                        <Form.Check
                           type="radio"
                           label="Pause"
                           name="status"
                           id="pause32"
                           className="pause"
-                          />
+                        />
                       </Col>
-                  </Form.Group>
-                </div>
+                    </Form.Group>
+                  </div>: null
+                }
               </div>
             </Col>
             <Col className="name col-auto">
@@ -79,7 +81,7 @@ const CampaignChannelChart = () => {
               <span>100%</span>
               <div className={editToggle ? "edit-budget shown" : "edit-budget"}>
                 <span className="edit-toggler increase" onClick={() => setEditToggle(!editToggle)}>+25% <i className="fas fa-pen ml-2"></i></span>
-                <div className="dropdown-box edit-dropdown">
+                { editToggle ? <div className="dropdown-box edit-dropdown">
                   <div className="close-dropdown d-flex align-items-center">
                       <span>Edit Multiplier</span>
                       <Button variant="transparent" onClick={() => setEditToggle(!editToggle)}><i className="fa fa-times" aria-hidden="true"></i></Button>
@@ -88,10 +90,11 @@ const CampaignChannelChart = () => {
                     <input type="text" placeholder="100%" />
                   </div>
                   <div className="action-buttons d-flex">
-                    <Button variant="transparent">Cancel</Button>
+                    <Button variant="transparent" onClick={() => setEditToggle(!editToggle)}>Cancel</Button>
                     <Button className="save-btn ml-auto" variant="transparent">Save</Button>
                   </div>
-                </div>
+                </div> : 
+                null}
               </div>
             </Col>
             <Col className="click">
